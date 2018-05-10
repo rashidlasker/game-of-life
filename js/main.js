@@ -24,6 +24,8 @@ function init() {
         cols = 20;
         canvas.width = canvasHeight;
         canvas.height = canvasWidth;
+        canvasHeight = canvas.height;
+        canvasWidth = canvas.width;
     }
     // Info Popovers
     tippy('.about', {
@@ -38,7 +40,6 @@ function init() {
     start = Date.now();
     cellArray = Array(rows).fill().map(() => Array(cols).fill(0));
     initCellArray();
-    intervalID = setInterval(updateCellArray,updateCellInterval);
     togglePlay();
     canvas.addEventListener("click", getPosition);
     window.requestAnimationFrame(draw);
