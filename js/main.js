@@ -8,6 +8,7 @@ var canvasHeight = 840;
 var browserWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 var browserHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
 
+var mobileView = false;
 var rows = 20;
 var cols = 40;
 var cellWidth = 40;
@@ -17,6 +18,21 @@ var updateCellInterval = 500;
 var intervalID = undefined;
 
 function init() {
+    if(window.innerWidth <= 500){
+        rows = 40;
+        cols = 20;
+        canvas.width = canvasHeight;
+        canvas.height = canvasWidth;
+    }
+    tippy('.about', {
+        html: '#aboutPopover',
+        interactive: true,
+        theme: 'dark about',
+        size: "small"
+    });
+    tippy('.help', {
+        html: '#helpPopover'
+    });
     start = Date.now();
     cellArray = Array(rows).fill().map(() => Array(cols).fill(0));
     initCellArray();
