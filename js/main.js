@@ -54,7 +54,6 @@ function togglePlay(){
         intervalID = undefined;
         document.getElementById("toggle").innerHTML = "Start";
     }
-    
 }
 
 function initCellArray(){
@@ -68,6 +67,20 @@ function initCellArray(){
         }
     }
 }
+
+function clearArray(){
+    for(var i = 0; i < rows; i++){
+        for(var j = 0; j < cols; j++){
+            cellArray[i][j] = 0;
+        }
+    }
+    if(intervalID!=undefined){
+        clearInterval(intervalID);
+        intervalID = undefined;
+        document.getElementById("toggle").innerHTML = "Start";
+    }
+}
+
 function updateCellArray() {
     let countArray = Array(rows).fill().map(() => Array(cols).fill(0));
     for(var i = 0; i < rows; i++){
