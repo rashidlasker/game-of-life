@@ -6,14 +6,30 @@
         <title>RoughJS Game of Life</title>
         <meta name="description" content="A fun little side-project">
         <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
     </head>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-        <canvas id="canvas" width="1640" height="600"></canvas>
-        <script src="https://rawgit.com/pshihn/rough/master/dist/rough.min.js"></script>
+        <div class="header">
+            <h1>Conway's Game of Life</h1>
+            <h2>Made by <a href="https://rashidlasker.github.io">Rashid Lasker</a></h2>
+        </div>
+        
+        <canvas id="canvas" width="1640" height="840"></canvas>
+        
+        <div class="controls">
+            <button id="toggle" onclick="togglePlay()">Stop</button>
+            <button id="step" onclick="updateCellArray()">Step</button>
+            <button id="reset" onclick="initCellArray()">Reset</button>
+        </div>
+        
+        <div class="about">
+        </div>
+        
+        <script src="js/rough.min.js"></script>
         <script src="js/main.js"></script>
     </body>
 </html>
