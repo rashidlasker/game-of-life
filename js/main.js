@@ -18,12 +18,14 @@ var updateCellInterval = 500;
 var intervalID = undefined;
 
 function init() {
+    // Mobile view
     if(window.innerWidth <= 500){
         rows = 40;
         cols = 20;
         canvas.width = canvasHeight;
         canvas.height = canvasWidth;
     }
+    // Info Popovers
     tippy('.about', {
         html: '#aboutPopover',
         interactive: true,
@@ -36,6 +38,7 @@ function init() {
     start = Date.now();
     cellArray = Array(rows).fill().map(() => Array(cols).fill(0));
     initCellArray();
+    intervalID = setInterval(updateCellArray,updateCellInterval);
     togglePlay();
     canvas.addEventListener("click", getPosition);
     window.requestAnimationFrame(draw);
