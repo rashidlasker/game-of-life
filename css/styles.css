@@ -19,7 +19,8 @@ button {
     border: 2px solid black;
     border-radius: 4px;
     padding: 5px 30px;
-    min-width: 100px;
+    margin-bottom: 5px;
+    min-width: 140px;
 }
 
 button:hover {
@@ -30,6 +31,37 @@ button:hover {
 button:active {
     background-color: #AAAAAA;
     border: 2px solid black;
+}
+
+/**************************************SCROLL**************************************/
+
+.scrollbar
+{
+	float: left;
+	background: #F5F5F5;
+	overflow-y: scroll;
+}
+
+.force-overflow
+{
+	min-height: 450px;
+}
+
+
+#style-3::-webkit-scrollbar-track
+{
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	background-color: #8AC48A;
 }
 
 /**************************************HEADER**************************************/

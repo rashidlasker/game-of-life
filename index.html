@@ -9,47 +9,49 @@
         <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
         <link rel="stylesheet" href="css/styles.css">
     </head>
-    <body>
+    <body class="scrollbar" id="style-3">
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
         <![endif]-->
-        <div class="header">
-            <h1>Conway's Game of Life</h1>
-            <h2>Made by <a class="about">Rashid Lasker</a> | <a class="help">Help</a>
-            </h2>
-        </div>
-        
-        <canvas id="canvas" width="1640" height="840"></canvas>
-        
-        <div class="controls">
-            <button id="toggle" onclick="togglePlay()">Stop</button>
-            <button id="step" onclick="updateCellArray()">Step</button>
-            <button id="random" onclick="initCellArray()">Random</button>
-            <button id="clear" onclick="clearArray()">Clear</button>
-        </div>
-        
-        <div id="aboutPopover" style="display: none;">
-            <img class="left-about" src="img/pfp.gif"><div class="right-about">
-                <h1>Hi there, I'm Rashid! Visit my site below!</h1>
-                <a href="https://rashidlasker.github.io/"><button>Site</button></a>
+        <div class="force-overflow">
+            <div class="header">
+                <h1>Conway's Game of Life</h1>
+                <h2>Made by <a class="about">Rashid Lasker</a> | <a class="help">Help</a>
+                </h2>
             </div>
-        </div>
-        
-        <div id="helpPopover" style="display: none;">
-            <h2>
-                The <span style="color:#8AC48A">Game of Life</span>, also known simply as Life, is a cellular automaton <br> 
-                devised by the British mathematician <span style="color:#8AC48A">John Horton Conway</span> in 1970. <br>
-                <br>
-                Each square in the grid is a cell that is either <span style="color:#8AC48A">alive</span> or dead. At each step<br>
-                in time, the following transitions occur:<br>
-                <br>
-                1. Any live cell with fewer than two live neighbors dies<br>
-                2. Any live cell with two or three live neighbors lives on<br>
-                3. Any live cell with more than three live neighbors dies<br>
-                4. Any dead cell with exactly three live neighbors becomes alive<br>
-                <br>
-                Click any cell below to switch its state or play with the controls below!
-            </h2>
+
+            <canvas id="canvas" width="1640" height="840"></canvas>
+
+            <div class="controls">
+                <button id="toggle" onclick="togglePlay()">Stop</button>
+                <button id="step" onclick="updateCellArray()">Step</button>
+                <button id="random" onclick="initCellArray()">Random</button>
+                <button id="clear" onclick="clearArray()">Clear</button>
+            </div>
+
+            <div id="aboutPopover" style="display: none;">
+                <img class="left-about" src="img/pfp.gif"><div class="right-about">
+                    <h1>Hi there, I'm Rashid! Visit my site below!</h1>
+                    <a href="https://rashidlasker.github.io/"><button>Site</button></a>
+                </div>
+            </div>
+
+            <div id="helpPopover" style="display: none;">
+                <h2>
+                    The <span style="color:#8AC48A">Game of Life</span>, also known simply as Life, is a cellular automaton <br> 
+                    devised by the British mathematician <span style="color:#8AC48A">John Horton Conway</span> in 1970. <br>
+                    <br>
+                    Each square in the grid is a cell that is either <span style="color:#8AC48A">alive</span> or dead. At each step<br>
+                    in time, the following transitions occur:<br>
+                    <br>
+                    1. Any live cell with fewer than two live neighbors dies<br>
+                    2. Any live cell with two or three live neighbors lives on<br>
+                    3. Any live cell with more than three live neighbors dies<br>
+                    4. Any dead cell with exactly three live neighbors becomes alive<br>
+                    <br>
+                    Click any cell below to switch its state or play with the controls below!
+                </h2>
+            </div>
         </div>
         
         <script src="js/tippy.all.min.js"></script>
