@@ -74,13 +74,6 @@ button:active {
 
 /**************************************ABOUT**************************************/
 
-@media only screen and (min-width: 500px) {
-    .about-theme {
-        width: 50% !important;
-        margin: 0 auto !important;
-    }
-}
-
 .right-about, .left-about {
     display: inline-block;
     width: 50%;
@@ -111,4 +104,19 @@ button:active {
     margin-top: 40px;
     margin-bottom: 30px;
     text-align: center;
+}
+
+/**************************************MEDIA QUERIES**************************************/
+
+@media only screen and (min-width: 500px) {
+    .about-theme {
+        width: 50% !important;
+        margin: 0 auto !important;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .help-text {
+        font-size: 11px;
+    }
 }
