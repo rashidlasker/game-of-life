@@ -136,24 +136,27 @@ function updateCellArray() {
 }
 
 function getPosition(event){
-    var x = new Number();
-    var y = new Number();
+    let x = new Number();
+    let y = new Number();
     var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 
-    if (event.x != undefined && event.y != undefined)
-    {
+    if (event.x != undefined && event.y != undefined) {
       x = event.x;
       y = event.y;
     }
-    else // Firefox method to get the position
-    {
+    else {
       x = event.clientX + document.body.scrollLeft +
           document.documentElement.scrollLeft;
       y = event.clientY + document.body.scrollTop +
           document.documentElement.scrollTop;
     }
-
-    x -= canvas.offsetLeft;
+    
+    let leftCorrection = 0;
+    if (window.innerWidth > 1640) {
+        leftCorrection = (window.innerWidth - 1640)/2;
+    }
+    
+    x -= canvas.offsetLeft + leftCorrection;
     y -= canvas.offsetTop - scrollTop;
     let scaledX = x/canvas.offsetWidth * canvasWidth;
     let scaledY = y/canvas.offsetHeight * canvasHeight;
